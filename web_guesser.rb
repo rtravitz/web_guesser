@@ -6,7 +6,8 @@ SECRET_NUMBER = rand(100)
 get '/' do
   guess = params["guess"].to_i
   message, color = check_guess(guess)
-  erb :index, :locals => {:number => SECRET_NUMBER, :message => message, :color => color}
+  erb :index, :locals => {:number => SECRET_NUMBER, :message => message,
+                          :color => color}
 end
 
 def check_guess(guess)
